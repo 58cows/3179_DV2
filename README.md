@@ -1,50 +1,51 @@
-Malaysia: Income, Poverty & Population
+# Malaysia’s Income & Poverty
 
-Mapping how household income and poverty levels vary across Malaysian states.
+State-level poverty, income, and population across Malaysia.
 
-Live site: https://aishazafar.github.io/FIT3179-DV2-Malaysia-Income-Poverty/
+**Live site:** _add your GitHub Pages link here_
 
-Files
+---
 
-index.html — main page (Vega-Lite embeds)
+## Files
+- **index.html** — main page (Vega-Lite embeds + explanations)
+- **css/style.css** — layout & typography
+- **js/main.js** — `vegaEmbed` calls (with cache-buster)
+- **specs/** — Vega-Lite specifications  
+  `map_poverty_latest.json`, `bar_rank_poverty.json`,  
+  `scatter_income_vs_poverty.json`, `lollipop_income_gap.json`,  
+  `popshare_100_stacked.json`
+- **data/** — CSV/TopoJSON (kept small)
+  - `hh_poverty_state.csv`, `hh_income_state.csv`, `population_state.csv`
+  - `malaysia_map.json` (ADM1), `ne_110m_ocean.json`, `ne_110m_graticules_5.json`
 
-css/styles.css — layout, colours, and typography
+---
 
-js/main.js — vegaEmbed calls
+## Visualisations
+1. **Where is poverty highest?** Choropleth map of latest **poverty rate (%)** by state.  
+   _Color:_ sequential **Blues** (darker = higher). Tooltip shows state, % and year.
+2. **Poverty by State (ranked).** Horizontal bars sorted by latest poverty rate; **dashed rule** = national average.  
+   _Color:_ above average **#4f46e5**, below average **#cbd5e1**.
+3. **Income vs. Poverty (bubble size = population).**  
+   **X:** median income (RM), **Y:** poverty rate (%), **Size:** population.  
+   _Style:_ violet fill **#7c8cf8** with purple outline **#4f46e5**.
+4. **Income Gap from National Median (lollipop).**  
+   **Gap (RM) = state median − national median.** Right of 0 = above; left = below.  
+   _Color:_ **green #10b981** (≥ 0) vs **red #ef4444** (< 0).
+5. **Population Exposure by Poverty Tier (100% stacked).**  
+   Share of national population per state by tier (**Very Low → Very High**).  
+   _Palette:_ `#d1fae5`, `#86efac`, `#fde68a`, `#f59e0b`, `#ef4444`.
 
-specs/ — Vega-Lite visualisation specifications
+---
 
-data/ — CSV + TopoJSON sources (kept < 1 MB)
+## Sources & Attribution
+- DOSM OpenDOSM:  
+  Population — https://open.dosm.gov.my/data-catalogue/population_state  
+  Household Poverty — https://open.dosm.gov.my/data-catalogue/hh_poverty_state  
+  Household Income — https://open.dosm.gov.my/data-catalogue/hh_income_state
+- Boundaries (ADM1): geoBoundaries via HDX  
+  https://data.humdata.org/dataset/geoboundaries-admin-boundaries-for-malaysia
+- Basemap assets: Natural Earth (ocean & graticules)
+- Geometry simplification/export: https://mapshaper.org/
 
-Visualisations
-
-Poverty across Malaysian states — Choropleth map (latest year by state).
-
-Income vs Poverty — Lollipop comparison (median income vs poverty rate).
-
-Population & Poverty trend (2002 – 2020) — Interactive line chart with year selector.
-
-Income Distribution by State — Grouped bar chart comparing urban vs rural household income.
-
-Population Map — Point map showing state centroids scaled by population size.
-
-Sources & Attribution
-
-Population data — open.dosm.gov.my/data-catalogue/population_state
-
-Poverty data — open.dosm.gov.my/data-catalogue/hh_poverty_state
-
-Income data — open.dosm.gov.my/data-catalogue/hh_income_state
-
-Malaysia boundaries — geoBoundaries Malaysia (ADM2)
-
-Basemap simplification — Mapshaper.org
-
-Author: Aisha Zafar • Updated: Oct 2025
-All data sources and assistance acknowledged.
-
-Description
-
-This project explores how household income, poverty rates, and population distribution differ across Malaysia.
-By combining official Department of Statistics Malaysia (DOSM) datasets and spatial boundaries, the visualisations reveal patterns of inequality between states, highlighting relationships between income levels and poverty incidence.
-Built entirely in Vega-Lite, hosted on GitHub Pages, and optimised (< 1 MB total data) for public viewing.
+**Author:** Aisha Zafar • **Updated:** _YYYY-MM-DD_  
+All assistance acknowledged.
