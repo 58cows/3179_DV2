@@ -47,5 +47,4 @@ State-level poverty, income, and population across Malaysia.
 - Basemap assets: Natural Earth (ocean & graticules)
 - Geometry simplification/export: https://mapshaper.org/
 
-**Author:** Aisha Zafar • **Updated:** _YYYY-MM-DD_  
-All assistance acknowledged.
+**Author:** Aisha Zafar • **Updated:** 26-10-2025
